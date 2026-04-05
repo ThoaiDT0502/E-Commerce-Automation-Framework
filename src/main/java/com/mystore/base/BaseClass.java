@@ -22,7 +22,8 @@ import java.util.Properties;
 public class BaseClass {
 
     public static Properties prop;
-    public static Action action = new Action();
+
+    // Declare ThreadLocal Driver
     public static ThreadLocal<RemoteWebDriver> webDriver = new ThreadLocal<>();
 
     @BeforeSuite(groups = {"Smoke","Sanity","Regression"})
@@ -68,11 +69,11 @@ public class BaseClass {
         getDriver().manage().deleteAllCookies();
         //Implicit TimeOuts
         getDriver().manage().timeouts().implicitlyWait(
-                Duration.ofSeconds(Integer.parseInt(prop.getProperty("implicitWait")))
-        );
+                Duration.ofSeconds(
+                        Integer.parseInt(prop.getProperty("implicitWait"))));
         getDriver().manage().timeouts().pageLoadTimeout(
-                Duration.ofSeconds(Integer.parseInt(prop.getProperty("pageLoadTimeOut")))
-        );
+                Duration.ofSeconds(
+                        Integer.parseInt(prop.getProperty("pageLoadTimeOut"))));
         //Launching the URL
         getDriver().get(prop.getProperty("url"));
 
