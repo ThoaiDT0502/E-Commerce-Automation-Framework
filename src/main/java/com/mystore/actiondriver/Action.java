@@ -744,4 +744,20 @@ public class Action extends BaseClass implements ActionInterface {
         return currentDate;
     }
 
+    @Override
+    public String handleAlert(WebDriver driver, String actionType) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+
+        String text = alert.getText();
+
+        if (actionType.equalsIgnoreCase("accept")) {
+            alert.accept();
+        } else if (actionType.equalsIgnoreCase("dismiss")) {
+            alert.dismiss();
+        }
+
+        return text;
+    }
+
 }

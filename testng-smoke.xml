@@ -14,7 +14,13 @@
         <classes>
 <!--            <class name="com.mystore.testcases.TC2_LoginTest" />-->
 <!--            <class name="com.mystore.testcases.TC3_LogoutTest" />-->
-            <class name="com.mystore.testcases.TC4_RegisterFailedTest" />
+<!--            <class name="com.mystore.testcases.TC4_RegisterFailedTest" />-->
+<!--            <class name="com.mystore.testcases.TC5_ContactUsFormTest" />-->
+<!--            <class name="com.mystore.testcases.TC6_TestCasePageTest" />-->
+<!--            <class name="com.mystore.testcases.TC7_ProductsTest" />-->
+<!--            <class name="com.mystore.testcases.TC8_SearchProductTest" />-->
+            <class name="com.mystore.testcases.TC9_SubscriptionTest" />
+
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

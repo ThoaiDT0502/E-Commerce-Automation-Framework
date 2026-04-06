@@ -34,6 +34,15 @@ public class IndexPage extends BaseClass {
     @FindBy(xpath = "//a[contains(text(),'Contact us')]")
     WebElement contactUsNav;
 
+    //Footer
+    @FindBy(id = "susbscribe_email")
+    WebElement subscriptField;
+    @FindBy(id = "subscribe")
+    WebElement subscriptBtn;
+    @FindBy(id = "success-subscribe")
+    WebElement successSubMeg;
+
+
     public IndexPage() {
         PageFactory.initElements(getDriver(), this);
     }
@@ -55,6 +64,43 @@ public class IndexPage extends BaseClass {
         action.fluentWait(getDriver(), signupLoginNav, 5);
         return action.isDisplayed(getDriver(), signupLoginNav);
     }
+
+    public ContactUsPage clickContactUsNav() {
+        action.click(getDriver(), contactUsNav);
+        return new ContactUsPage();
+    }
+
+    public TestCasePage clickTestCaseNav() {
+        action.click(getDriver(), testcaseNav);
+        return new TestCasePage();
+    }
+
+    public AllProductPage clickProductsNav() {
+        action.click(getDriver(), productsNav);
+        return new AllProductPage();
+    }
+
+    public CartPage clickCartNav() {
+        action.click(getDriver(), cartNav);
+        return new CartPage();
+    }
+
+    public void inputSubField(String subEmail) {
+        action.scrollByVisibilityOfElement(getDriver(), subscriptField);
+        action.type(subscriptField, subEmail);
+    }
+
+    public void clickSubBtn() {
+        action.click(getDriver(), subscriptBtn);
+    }
+
+    public boolean verifySuccessSub() {
+        action.fluentWait(getDriver(), successSubMeg, 3);
+        return action.isDisplayed(getDriver(), successSubMeg);
+    }
+
+
+
 
 
 }

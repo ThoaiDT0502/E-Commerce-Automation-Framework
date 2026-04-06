@@ -74,4 +74,36 @@ public class DataProviders {
         return data;
     }
 
+    @DataProvider(name = "contactUsFormData")
+    public Object[][] getContactUsFormData() {
+        int rows = obj.getRowCount("ContactUsForm");
+        int column = obj.getColumnCount("ContactUsForm");
+        int actRows = rows - 1;
+
+        Object[][] data = new Object[actRows][column];
+
+        for (int i = 0; i < actRows; i++) {
+            for (int j = 0; j < column; j++) {
+                data[i][j] = obj.getCellData("ContactUsForm", j, i + 2);
+            }
+        }
+        return data;
+    }
+
+    @DataProvider(name = "getSearchData")
+    public Object[][] getSearchData() {
+        int rows = obj.getRowCount("SearchProduct");
+        int column = obj.getColumnCount("SearchProduct");
+        int actRows = rows - 1;
+
+        Object[][] data = new Object[actRows][column];
+
+        for (int i = 0; i < actRows; i++) {
+            for (int j = 0; j < column; j++) {
+                data[i][j] = obj.getCellData("SearchProduct", j, i + 2);
+            }
+        }
+        return data;
+    }
+
 }

@@ -59,11 +59,11 @@ public class TC1_RegisterTest extends BaseClass {
     ) {
         Log.startTestCase("registerAndDelete");
         indexPage = new IndexPage();
-        indexPage.validateLogo();
+        Assert.assertTrue(indexPage.validateLogo());
 
         Log.info("Click on 'Signup / Login' button");
         loginSignUpPage = indexPage.clickSignupLoginBtn();
-        loginSignUpPage.verifySignUpTitle();
+        Assert.assertTrue(loginSignUpPage.verifySignUpTitle());
         accountCreationPage = loginSignUpPage.Signup(name, email);
 
         Log.info("Verify that 'ENTER ACCOUNT INFORMATION' is visible");
