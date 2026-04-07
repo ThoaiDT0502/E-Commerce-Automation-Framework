@@ -35,7 +35,7 @@ public class TC5_ContactUsFormTest extends BaseClass {
     @Test(
             dataProvider = "contactUsFormData",
             dataProviderClass = DataProviders.class,
-            groups = {"Smoke", "Sanity"}
+            groups = {"Smoke"}
     )
     public void contactsUsFormTest(
             String name,

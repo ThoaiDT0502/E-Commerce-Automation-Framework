@@ -56,7 +56,7 @@ public class TC7_ProductsTest extends BaseClass {
 
     }
 
-    @Test(groups = {"Sanity"})
+    @Test(groups = {"Smoke"})
     public void verifyProductQuantityInCartTest(){
         Log.startTestCase("verifyProductQuantityTest");
 

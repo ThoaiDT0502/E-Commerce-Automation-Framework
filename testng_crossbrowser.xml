@@ -8,6 +8,7 @@
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
 			<class name="com.mystore.testcases.TC0_IndexPageTest" />
+			<class name="com.mystore.testcases.TC2_LoginTest" />
 		</classes>
 	</test>
 
@@ -15,6 +16,7 @@
 		<parameter name="browser" value="Firefox"></parameter>
 		<classes>
 			<class name="com.mystore.testcases.TC0_IndexPageTest" />
+			<class name="com.mystore.testcases.TC2_LoginTest" />
 		</classes>
 	</test>
 
@@ -22,6 +24,7 @@
 		<parameter name="browser" value="Edge"></parameter>
 		<classes>
 			<class name="com.mystore.testcases.TC0_IndexPageTest" />
+			<class name="com.mystore.testcases.TC2_LoginTest" />
 		</classes>
 	</test>
 </suite> <!-- Suite -->

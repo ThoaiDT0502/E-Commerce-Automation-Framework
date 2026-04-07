@@ -32,9 +32,8 @@ public class TC3_LogoutTest extends BaseClass {
     @Test(
             dataProvider = "validLoginData",
             dataProviderClass = DataProviders.class,
-            groups = {"Smoke", "Sanity"}
+            groups = {"Smoke"}
     )
-
     public void logOutTest(String email, String password) {
         Log.startTestCase("logOutTest");
 

@@ -5,6 +5,7 @@ import com.mystore.pageobjects.AllProductPage;
 import com.mystore.pageobjects.CartPage;
 import com.mystore.pageobjects.IndexPage;
 import com.mystore.utility.Log;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -27,7 +28,7 @@ public class TC10_AddToCartTest extends BaseClass {
         getDriver().quit();
     }
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"Sanity"})
     public void addToCartTest() {
         Log.startTestCase("addToCartTest");
 
@@ -59,6 +60,30 @@ public class TC10_AddToCartTest extends BaseClass {
 
 
         Log.endTestCase("addToCartTest");
+
+    }
+
+    @Test(groups = {"Sanity"})
+    public void addToCartFromRcmItemTest() {
+        Log.startTestCase("addToCartFromRcmItemTest");
+
+        indexPage = new IndexPage();
+        Assert.assertTrue(indexPage.validateLogo());
+        getDriver().navigate().refresh();
+
+        Assert.assertTrue(indexPage.verifyRCMTitle());
+        indexPage.clickAddToCartInRCMItem();
+        Log.info("Added product");
+        Assert.assertTrue(indexPage.verifySuccessAddedMsg());
+        cartPage = indexPage.clickViewCartBtn();
+
+        Assert.assertTrue(cartPage.verifyCartPage());
+        Assert.assertTrue(cartPage.verifyNumberOfProducts(1));
+        cartPage.verifyProductPriceQuantityTotal();
+        Log.info("Verify price, quantity and total price");
+
+
+        Log.endTestCase("addToCartFromRcmItemTest");
 
     }
 

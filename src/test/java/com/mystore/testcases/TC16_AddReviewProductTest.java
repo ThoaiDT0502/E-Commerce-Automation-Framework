@@ -33,7 +33,7 @@ public class TC16_AddReviewProductTest extends BaseClass {
     @Test(
             dataProvider = "getReviewData",
             dataProviderClass = DataProviders.class,
-            groups = {"Smoke"})
+            groups = {"Sanity"})
     public void addReviewProductTest(
             String name,
             String email,

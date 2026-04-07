@@ -33,7 +33,7 @@ public class TC4_RegisterFailedTest extends BaseClass {
     @Test(
             dataProvider = "signupFailedData",
             dataProviderClass = DataProviders.class,
-            groups = {"Smoke", "Sanity"}
+            groups = {"Smoke"}
     )
     public void signupFailedTest(String name, String email) {
         Log.startTestCase("signupFailedTest");

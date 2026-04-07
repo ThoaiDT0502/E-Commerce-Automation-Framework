@@ -41,7 +41,16 @@ public class IndexPage extends BaseClass {
     WebElement subscriptBtn;
     @FindBy(id = "success-subscribe")
     WebElement successSubMeg;
+    @FindBy(xpath = "//h2[contains(text(),'recommended items')]")
+    WebElement rcmItemTitle;
+    @FindBy(xpath = "//div[@class='recommended_items']//a[contains(@class,'add-to-cart')]")
+    WebElement addToCartBtnInRCMItem;
 
+    //Cart
+    @FindBy(xpath = "//h4[contains(text(),'Added!')]")
+    WebElement cartAddedTitle;
+    @FindBy(xpath = "//*[@id=\"cartModal\"]//a/u")
+    WebElement viewCartBtn;
 
     public IndexPage() {
         PageFactory.initElements(getDriver(), this);
@@ -101,11 +110,30 @@ public class IndexPage extends BaseClass {
     }
 
     public boolean verifySuccessSub() {
-        action.fluentWait(getDriver(), successSubMeg, 3);
+        action.fluentWait(getDriver(), successSubMeg, 5);
         return action.isDisplayed(getDriver(), successSubMeg);
     }
 
+    public boolean verifyRCMTitle() {
+        action.scrollByVisibilityOfElement(getDriver(), rcmItemTitle);
+        action.fluentWait(getDriver(), rcmItemTitle, 5);
+        return action.isDisplayed(getDriver(), rcmItemTitle);
+    }
 
+    public void clickAddToCartInRCMItem() {
+        action.fluentWait(getDriver(), addToCartBtnInRCMItem, 5);
+        action.click(getDriver(), addToCartBtnInRCMItem);
+    }
+
+    public boolean verifySuccessAddedMsg() {
+        action.fluentWait(getDriver(), cartAddedTitle, 5);
+        return action.isDisplayed(getDriver(), cartAddedTitle);
+    }
+
+    public CartPage clickViewCartBtn() {
+        action.click(getDriver(), viewCartBtn);
+        return new CartPage();
+    }
 
 
 

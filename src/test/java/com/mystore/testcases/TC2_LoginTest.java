@@ -34,7 +34,6 @@ public class TC2_LoginTest extends BaseClass {
             dataProviderClass = DataProviders.class,
             groups = {"Smoke", "Sanity"}
     )
-
     public void loginCorrectTest(String email, String password) {
         Log.startTestCase("loginCorrectTest");
         indexPage = new IndexPage();
